@@ -12,3 +12,4 @@ With that, it will take any bril program and run through the process of extracti
 TO RUN:
 1. You may copy the ClassWork folder somewhere in the original bril repo to find it easier to run and test.
 2. Run with: bril2json < ./path/to/tests/example.bril | python3 ./path/to/mycfg.py
+3. Example: bril2json < ./tests/branch_jmp.bril | python3 ./mycfg.py
