@@ -1,0 +1,7 @@
+@main {
+  x: int = const 4;
+  jmp .target;
+  y: int = const 5;
+.target:
+  print x;
+}

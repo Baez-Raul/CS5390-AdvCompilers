@@ -1,0 +1,12 @@
+@main {
+  i: int = const 0;
+.loop:
+  c: bool = lt i 5;
+  br c .body .end;
+.body:
+  print i;
+  i: int = add i 1;
+  jmp .loop;
+.end:
+  print i;
+}

@@ -1,0 +1,16 @@
+@main {
+  cond: int = const 1;
+  br cond .then .else;
+.then:
+  t: int = const 42;
+  print t;
+  jmp .end;
+.else:
+  f: int = const 13;
+  print f;
+  jmp .end;
+.end:
+  z: int = const 0;
+  print z;
+}
+
