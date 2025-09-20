@@ -6,6 +6,7 @@ Inside the BrilClassWork folder is a mycfg.py file that contains the work for th
 - Reverse Postorder Function
 - Back Edge Function
 - Is Reducible Function
+- Some Test bril files
 
 With that, it will take any bril program and run through the process of extracting the instructions from the program and running it through the functions. Some example bril programs have been provided inside the "./BrilClassWork/tests" folder.
 
