@@ -2,7 +2,7 @@
 
 Inside the BrilClassWork folder is a mycfg.py file that contains the work for the following:
 - Basic Blocks and MyCFG program
-- Path Lenght Function
+- Path Length Function
 - Reverse Postorder Function
 - Back Edge Function
 - Is Reducible Function
