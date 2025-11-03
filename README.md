@@ -17,7 +17,8 @@ TO RUN:
 
 Refer to the bril repo for troubleshooting with bril itself: https://github.com/sampsyo/bril.git
 
-#Implementing Loop Optimization Passes in LLVM#
+**Implementing Loop Optimization Passes in LLVM**
+
 TO RUN:
 1. The "libSImpleLCIM.so" file should run for linux systems, else remake: clang++ -fPIC -shared -O3 `llvm-config-21 --cxxflags` ./SimpleLICM-skeleton.cpp -o libIVE.so
 2. To run opt pass inside LLVMClassWork folder: /usr/lib/llvm-21/bin/opt -load-pass-plugin ./libSimpleLICM.so -passes=simple-licm -disable-output input_for_hello.ll
