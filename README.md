@@ -17,7 +17,7 @@ TO RUN:
 
 Refer to the bril repo for troubleshooting with bril itself: https://github.com/sampsyo/bril.git
 
-**Implementing Loop Optimization Passes in LLVM**
+**Implementing Loop Optimization Passes in LLVM (LLVM Assignment 1)**
 
 TO RUN:
 1. The "libSImpleLCIM.so" file should run for linux systems, else remake: clang++ -fPIC -shared -O3 `llvm-config-21 --cxxflags` ./SimpleLICM-skeleton.cpp -o libIVE.so
