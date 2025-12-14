@@ -27,6 +27,7 @@ TO RUN:
 4. To run opt pass inside LLVM ClassWork folder, and using any of the files inside the test folder in the repo: $LLVM_DIR/bin/opt -load-pass-plugin ./libDerivedInductionVarElim.so -passes=ind-var-elim -disable-output ../llvm-tutor-main/test/llvm/loop-deletion.ll
 
 **Dead Store Elimination**
+
 clang++ -std=c++17 -fPIC -shared MemorySSADemo.cpp -o libMemorySSADemo.so \
   $(llvm-config --cxxflags --ldflags --system-libs) -lLLVM
 
@@ -37,6 +38,7 @@ opt -load-pass-plugin=./libMemorySSADemo.so \
 dot -Tpdf demo2_memoryssa.dot -o demo2_memoryssa.pdf
 
 **Term Project**
+
 See the 'Term Project' folder. In the outputs folder we have included all the results of the passes described in the report. To run our instance counter for checking performance of these passes run:
 
 $LLVM_DIR/opt -load-pass-plugin ./libCountInstModulePass.so     -passes=count-inst     -disable-output ./outputs/mlp_complex_mem2reg.ll
