@@ -23,5 +23,20 @@ TO RUN:
 1. The "libSImpleLCIM.so" file should run for linux systems, else remake: clang++ -fPIC -shared -O3 `llvm-config-21 --cxxflags` ./SimpleLICM.cpp -o libIVE.so
 2. To run opt pass inside LLVMClassWork folder: /usr/lib/llvm-21/bin/opt -load-pass-plugin ./libSimpleLICM.so -passes=simple-licm -disable-output input_for_hello.ll
 
-3. The libIVE.so is set up for derived induction variable elimination, else remake: clang++ -fPIC -shared -O3 `llvm-config-21 --cxxflags` ./DerivedInductionVar.cpp -o libIVE.so
-4. To run opt pass inside LLVM ClassWork folder, and using any of the files inside the test folder in the repo: /usr/lib/llvm-21/bin/opt -load-pass-plugin ./libIVE.so -passes=derived-iv -disable-output ./llvm-tutor-main/test/MergeBB_exec.ll
+3. The libIVE.so is set up for derived induction variable elimination, else remake: $LLVM_DIR/bin/clang -fPIC -shared -O3 `llvm-config-21 --cxxflags` ./DerivedInductionVar.cpp -o libIVE.so
+4. To run opt pass inside LLVM ClassWork folder, and using any of the files inside the test folder in the repo: $LLVM_DIR/bin/opt -load-pass-plugin ./libDerivedInductionVarElim.so -passes=ind-var-elim -disable-output ../llvm-tutor-main/test/llvm/loop-deletion.ll
+
+**Dead Store Elimination**
+clang++ -std=c++17 -fPIC -shared MemorySSADemo.cpp -o libMemorySSADemo.so \
+  $(llvm-config --cxxflags --ldflags --system-libs) -lLLVM
+
+opt -load-pass-plugin=./libMemorySSADemo.so \
+    -passes=memssa-demo \
+    test/demo2_simplified.ll -disable-output
+
+dot -Tpdf demo2_memoryssa.dot -o demo2_memoryssa.pdf
+
+**Term Project**
+See the 'Term Project' folder. In the outputs folder we have included all the results of the passes described in the report. To run our instance counter for checking performance of these passes run:
+
+$LLVM_DIR/opt -load-pass-plugin ./libCountInstModulePass.so     -passes=count-inst     -disable-output ./outputs/mlp_complex_mem2reg.ll
